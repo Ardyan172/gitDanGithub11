@@ -1,0 +1,279 @@
+/* Untuk FOOTER */
+html {
+    position: relative;
+    /* ini untuk menangkap position absolute milik footer */
+}
+
+body {
+    margin-bottom: 100px;
+    /* samakan tingginya dengan tinggi footer */
+}
+/* Akhir untuk footer */
+
+
+/* jumbotron */
+.jumbotron {
+    height: 540px;
+    background-image: url('../../img/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    /*background-attachment agar gambarnya diam tidak bergerak*/
+    background-position: 0px -130px;
+    /*untuk menggeser gambar*/
+    overflow: hidden;
+    /*agar ketika element PARALLAX JS keluar dari class jumbotron itu disembunyikan*/
+}
+
+.jumbotron img {
+    border-radius: 50%;
+    width: 150px;
+    border: 3px solid rgba(0, 0, 0, 0.7);
+}
+
+.jumbotron h1 {
+    font-size: 80px;
+    color: black;
+    text-shadow: 3px 3px 10px white;
+}
+
+.jumbotron p {
+    color: white;
+    text-shadow: 3px 3px 5px black;
+}
+/* Akhir jumbotron */
+
+
+/* Untuk semua garis horizontal di halaman index */
+hr {
+    width: 250px;
+    border-top: 3px solid black;
+}
+/* Untuk semua garis horizontal di halaman index */
+
+
+/* semua section */
+section {
+    min-height: 600px;
+}
+
+.untukP p {
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+/* Akhir semua section */
+
+
+/* Portfolio */
+.portfolio .thumbnail {
+    transition: 0.8s;
+    opacity: 0;
+    transform: translate(0, -60px);
+}
+
+.portfolio .thumbnail.muncul {
+    /*class muncul itu dibuat oleh JQUERY*/
+    opacity: 1;
+    transform: translate(0, 0);
+    /*translate mirip seperti properti position*/
+}
+
+.portfolio {
+    background-color: #eee;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.portfolio .row img {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.portfolio .container .row .overlay {
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    transition: 1s;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    overflow: hidden;
+    z-index: 9999;
+    width: 0;
+    height: 0;
+}
+
+.portfolio .container .row .overlay:target {
+/* ketika URL mencetak id yang mempunyai class .overlay */
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    width: auto;
+    height: auto;
+}
+
+.portfolio .container .row .overlay .gambar {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 150px;
+    left: 520px;
+    background-repeat: no-repeat;
+}
+
+.portfolio .close {
+    background-image: url('../../tutup/close.png');
+    position: absolute;
+    top: -15px;
+    left: 310px;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    z-index: 9999;
+    opacity: 0.8;
+    animation-name: tombolClose;
+    transition: 1s;
+}
+
+.portfolio .close:hover {
+    opacity: 1;
+}
+
+.portfolio .next {
+    display: inline-block;
+    background-image: url('../../navigasi/next.png');
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 40%;
+    right: 70px;
+    background-size: cover;
+    transition: 0.7;
+    opacity: 0.8;
+}
+
+.portfolio .next:hover {
+    opacity: 1;
+}
+
+.portfolio .previous {
+    display: inline-block;
+    background-image: url('../../navigasi/previous.png');
+    left: -110px;
+    top: 40%;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    transition: 0.7s;
+    opacity: 0.8;
+}
+
+.portfolio .previous:hover {
+    opacity: 1;
+}
+
+.portfolio .container .row .overlay:target .gambar {
+    animation-name: gambar;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+.portfolio .container .row .overlay .gambar1 {
+    background-image: url('../../img/foto/1.jpg');
+}
+
+.portfolio .container .row .overlay .gambar2 {
+    background-image: url('../../img/foto/2.jpg');
+}
+
+.portfolio .container .row .overlay .gambar3 {
+    background-image: url('../../img/foto/3.jpg');
+}
+
+.portfolio .container .row .overlay .gambar4 {
+    background-image: url('../../img/foto/4.jpg');
+}
+
+.portfolio .container .row .overlay .gambar5 {
+    background-image: url('../../img/foto/5.jpg');
+}
+
+.portfolio .container .row .overlay .gambar6 {
+    background-image: url('../../img/foto/6.jpg');
+}
+/* Akhir /*portfolio */
+
+
+/* contact */
+.form {
+    min-height: 900px;
+}
+
+.form h2 {
+    margin-top: 20px;
+}
+
+.form form {
+    margin-top: 20px;
+}
+
+.form form label {
+    float: left;
+}
+
+.form form input {
+    width: 50%;
+    margin-left: 100px;
+}
+
+.form form .pesan, .pilih {
+    width: 59%;
+}
+
+.clear {
+    clear: both;
+}
+
+.form .email, .password, .pesan, .pilih {
+    margin-top: 20px;
+} 
+/* Akhir contact */
+
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+}
+
+footer p {
+    line-height: 100px;
+    color: #aaa;
+}
+/* Akhir Footer */
+
+
+
+/* Animasi */
+@keyframes gambar {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+
